@@ -10,7 +10,8 @@
     "build": "babel --copy-files --out-dir  dist --ignore *.test.js src",
     "test": "mocha src/index.test.js --compilers js:babel-register",
     "test:watch": "npm test -- -w",
-    "coverage:report": "nyc npm t",
+    "coverage:generate": "nyc npm t",
+    "coverage:report": "cat ./coverage/lcov.info | codecov",
     "coverage:check": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
   },
   "dependencies": {
@@ -30,7 +31,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run coverage:report && npm run coverage:check"
+      "pre-commit": "npm run coverage:generate && npm run coverage:check"
     }
   },
   "babel": {
