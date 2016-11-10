@@ -10,7 +10,7 @@
     "build": "babel --copy-files --out-dir  dist --ignore *.test.js src",
     "test": "mocha src/index.test.js --compilers js:babel-register",
     "test:watch": "npm test -- -w",
-    "coverage:generate": "nyc --reporter=lcov npm t",
+    "coverage:generate": "nyc --reporter=lcov  npm t",
     "coverage:report": "cat ./coverage/lcov.info | codecov",
     "coverage:check": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
   },
