@@ -9,7 +9,7 @@ const random = number => {
   }
 
   let randomItems = [];
-  for (let i = 0; i < number; i++) {
+  for (let counter = 0; counter < number; counter++) {
     randomItems.push(getRandomItem());
   }
   return randomItems;
