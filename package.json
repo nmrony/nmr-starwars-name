@@ -1,7 +1,7 @@
 {
   "name": "nmr-starwars-name",
   "main": "index.js",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Stupid simple open source project",
   "author": "Nur Rony <pro.nmrony@gmail.com> (http://nmrony.info)",
   "license": "MIT",
@@ -12,7 +12,10 @@
     "test:watch": "npm test -- -w",
     "coverage:generate": "nyc --reporter=lcov  npm t",
     "coverage:report": "cat ./coverage/lcov.info | codecov",
-    "coverage:check": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
+    "coverage:check": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release",
+    "commit": "git-cz"
   },
   "dependencies": {
     "codecov": "^1.0.1",
@@ -25,14 +28,21 @@
     "babel-preset-stage-2": "^6.18.0",
     "babel-register": "^6.18.0",
     "chai": "^3.5.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.1.2",
     "nyc": "^8.4.0",
-    "rimraf": "^2.5.4"
+    "rimraf": "^2.5.4",
+    "semantic-release": "^15.1.7",
+    "travis-deploy-once": "^4.4.1"
   },
   "config": {
     "ghooks": {
       "pre-commit": "npm run coverage:generate && npm run coverage:check"
+    },
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "babel": {
@@ -40,5 +50,9 @@
       "es2015",
       "stage-2"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nmrony/nmr-starwars-name.git"
   }
 }
