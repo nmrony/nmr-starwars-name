@@ -3,7 +3,7 @@ import uniqueRandomArray from 'unique-random-array';
 
 const getRandomItem = uniqueRandomArray(starWarsNames);
 
-function random(number) {
+const random = number => {
   if (number === undefined) {
     return getRandomItem();
   }
@@ -13,7 +13,7 @@ function random(number) {
     randomItems.push(getRandomItem());
   }
   return randomItems;
-}
+};
 
 export default {
   all: starWarsNames,
