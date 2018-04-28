@@ -9,13 +9,13 @@ function random(number) {
   }
 
   let randomItems = [];
-  for (var i = 0; i < number; i++) {
+  for (let i = 0; i < number; i++) {
     randomItems.push(getRandomItem());
   }
   return randomItems;
 }
 
-module.exports = {
+export default {
   all: starWarsNames,
   random
 };
